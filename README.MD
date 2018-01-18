@@ -1,0 +1,1 @@
+Repository of the website developement assignments during my spring of 2018 semester.
