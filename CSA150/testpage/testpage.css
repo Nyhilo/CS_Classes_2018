@@ -29,3 +29,9 @@ p {
 br {
     line-height: 2em
 }
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #f4f4f4;
+    text-align: center;
+}
