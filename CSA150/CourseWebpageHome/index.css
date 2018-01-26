@@ -3,9 +3,32 @@
     text-align: center;
     
     margin: auto;
-    width: 75%;
+    width: 40%;
     padding: 1em;
 }
 
 body {
 }
+
+.Header {
+    font-family: 'Monofur', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+h2 {
+    padding-top: 2em;
+    font-size: 200%;
+}
+
+#firstHead {
+    padding-top: 0em;
+}
+
+@font-face {
+font-family: "Monofur";
+src: url("fonts/monof55.ttf");
+}
+
