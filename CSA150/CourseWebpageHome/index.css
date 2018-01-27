@@ -1,4 +1,4 @@
-main {
+body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     
@@ -8,10 +8,7 @@ main {
     padding-top: 1rem;
 }
 
-#topHeader {
-}
-
-Header {
+header {
     font-family: 'Monofur', Arial, Helvetica, sans-serif;
 }
 
@@ -25,6 +22,7 @@ h1 {
 }
 
 h2 {
+    font-family: 'Monofur', Arial, Helvetica, sans-serif;
     padding-top: 1rem;
     font-size: 200%;
 }
