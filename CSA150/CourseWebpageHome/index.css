@@ -1,13 +1,14 @@
 .main {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    text-align: left;
     
-    margin: auto;
-    width: 40%;
-    padding: 1em;
+    margin: left;
+    /*width: 5rem;*/
+    padding: 15%;
+    padding-top: 1rem;
 }
 
-body {
+#topHeader {
 }
 
 .Header {
@@ -15,16 +16,21 @@ body {
 }
 
 h1 {
+    color: #33ff66;
+    background-color: black;
+    padding:.2em;
+    max-width: 6em;
+    border: 1px solid darkgray;
     font-size: 250%;
 }
 
 h2 {
-    padding-top: 2em;
+    padding-top: 1rem;
     font-size: 200%;
 }
 
-#firstHead {
-    padding-top: 0em;
+#firstSubhead {
+    padding-top: 0rem;
 }
 
 @font-face {
@@ -32,3 +38,34 @@ font-family: "Monofur";
 src: url("fonts/monof55.ttf");
 }
 
+/* Blink!!! */
+blink {
+    -webkit-animation: 1s linear infinite condemned_blink_effect; // for android
+    animation: 1s linear infinite condemned_blink_effect;
+}
+@-webkit-keyframes condemned_blink_effect { // for android
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+p {
+    text-indent: 2rem;
+}
