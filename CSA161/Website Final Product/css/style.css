@@ -1,0 +1,92 @@
+body {
+    background-color: #BEBBB6;
+
+    font-family: 'Monofur', Arial, sans-serif;
+
+    margin-top: 20vh;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+heading {
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main {
+}
+
+
+/* Grid Items */
+.grid-container {
+    display: grid;
+    margin: auto;
+    grid-template-columns: auto 15rem;
+    grid-gap: 1vh .5vw;
+
+    background-color: #BEBBB6;
+
+    width: 32rem;
+    /*padding: 1vmin;*/
+
+    text-align: center;
+}
+
+.grid-item {
+    background-color: white;
+    border: .2rem double #444;
+    border: .2rem double rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+    padding: 1rem;
+
+}
+
+.subtitle {
+    font-size: 1rem;
+}
+
+/* Individual items in the grid
+    list of pastel colors
+    #ffd1dc (255,209,220)
+    #ddceff (221,206,255)
+*/
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited, a:active {
+    color: #333;
+}
+
+.idle {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.idle:hover {
+    background-color: #bbebff;
+}
+
+.hello:hover {
+    background-color: #ccffee;
+}
+
+.hello:active {
+    background-color: #E6FFF7;
+}
+
+.about:hover {
+    background-color: #ffd7cc;
+}
+
+/* Misc */
+@font-face {
+    font-family: "Monofur";
+    src: url("fonts/monof55.ttf");
+}
+
