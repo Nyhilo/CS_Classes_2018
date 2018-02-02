@@ -88,7 +88,7 @@ function update(field) {
     var fieldString = ""; 
 
     for (var i = 1; i <= field.length - 1; i++) {
-        fieldString += field[i].join("") + "\n";
+        fieldString += field[i].join("") + "<br>";
     };
 
     simField.innerHTML = fieldString;

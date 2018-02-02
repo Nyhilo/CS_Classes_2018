@@ -8,12 +8,14 @@ body {
 
 .wolfram-grid-container {
     display: grid;
-    grid-template-columns: 25rem auto;
+    grid-template-columns: 20rem 40vw;
     grid-template-rows: auto;
 
     margin-left: 20%;
     margin-bottom: 2rem;
+    position: absolute;
     height: 80%;
+    width:; 80vw;
 }
 
 .simulation-area {
@@ -25,7 +27,11 @@ body {
     padding: .5rem;
 }
 
-#rules-defined {
+.options-area {
+    font-size: 1.5rem;
+}
+
+ #rules-defined {
     font-family: Courier, monospace;
     font-size: 1.5rem;
 }
