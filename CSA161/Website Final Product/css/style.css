@@ -115,7 +115,7 @@ a:link, a:visited, a:active {
 /* Misc */
 @font-face {
     font-family: "Monofur";
-    src: url("fonts/monof55.ttf");
+    src: url("../fonts/monof55.ttf");
 }
 
 /*Other Page*/

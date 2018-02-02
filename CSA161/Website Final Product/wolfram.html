@@ -9,14 +9,21 @@
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/wolfram.css" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 </head>
 
 <body>
     <header><h1 class="wolfram-header">Wolfram</h1></header>
 
     <main class="wolfram-grid-container">
-        <div class="simulation-area"><font face="sans-serif">&#9632;&#9633;</font></div>
-        <div class="options-area">options</div> 
+        <div class="simulation-area" >
+            <span id="sim-first-line">■</span><br>
+            <span id="sim-area">□<br/>□<br/>□</span>
+        </div>
+        <div class="options-area">
+            Rules:<br/>
+            <span id="rules-defined"></span>
+        </div> 
     </main>
 
     <footer>
@@ -24,5 +31,7 @@
             <div class="return-footer">Return Home</div>
         </a>
     </footer>
+
+    <script src="javascript/wolfram.js"></script>
 </body>
 </html>

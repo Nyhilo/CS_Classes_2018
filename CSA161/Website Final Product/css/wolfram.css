@@ -17,15 +17,26 @@ body {
 }
 
 .simulation-area {
-    font-family: sans-serif;
+    text-align: center;
+    font-family: Courier, monospace;
     font-size: 1.5rem;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
     padding: .5rem;
 }
 
+#rules-defined {
+    font-family: Courier, monospace;
+    font-size: 1.5rem;
+}
+
+#sim-area {
+    display: block;
+    line-height: 60%;
+}
+
 .options-area {
-    padding: .5rem;
+    padding: .8rem;
     padding-left: 2rem;
 }
 
