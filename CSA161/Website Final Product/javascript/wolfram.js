@@ -22,7 +22,7 @@ The Gist is that there are 8 rules that define a simulation. These correspond to
      □   ■   ■   □   ■   ■   ■   □
 
 */
-window.onload = function() {
+// window.onload = function() {
 
   /////////////
  // Globals //
@@ -34,7 +34,8 @@ var simFirstLine = document.getElementById("sim-first-line");
 var rulesDefined = document.getElementById("rules-defined");
 
 // Grid width and height, this will probably become more flexible later
-var fieldWidth   = 20;
+var field = new Array();
+var fieldWidth   = 40;
 var fieldHeight  = 40;
 
 // There are 8 rules for the simulation. We'll define rule 30 as an initial state just for fun
@@ -65,16 +66,22 @@ function createArray(length) {
 function randomPixel() {
     // Math.round(Math.random()) will return either a 1 or a 0
     if (Math.round(Math.random())) { return "■"; }
-    else { return "□"; };
+        else { return "□"; };
 };
 
 function convertPixel(pix) {
     // pix will either be a 1 or 0
     if (pix) { return "■"; }
-    else { return "□"; };
+        else { return "□"; };
 }
 
-function updateRules(rules) {
+function convertState(state) {
+    // pix will either be a "■" or "□"
+    if (state == "■") { return 1; }
+        else { return 0; };    
+}
+
+function updateRules() {
     rulesString = "&nbsp;&nbsp;■■■&nbsp;■■□&nbsp;■□■&nbsp;■□□&nbsp;□■■&nbsp;□■□&nbsp;□□■&nbsp;□□□<br>";
     for (var i = 0; i <= rules.length - 1; i++) {
         rulesString += "&nbsp;&nbsp;&nbsp;" + convertPixel(rules[i]);
@@ -83,7 +90,7 @@ function updateRules(rules) {
     rulesDefined.innerHTML = rulesString;
 };
 
-function update(field) {
+function update() {
     simFirstLine.innerHTML = field[0].join("");
     var fieldString = ""; 
 
@@ -95,34 +102,87 @@ function update(field) {
 };
 
 function wolfram() {
-    //
+    var state = "";
+
+    for (var i = 1; i <= field.length - 1; i++) {
+        for (var j = 0; j <= field[i].length - 1; j++) {
+            // State will be something like "110" and will be the thing we check against the rules
+            state = ""
+
+            // The first state value is the value up and to the left of the cell we're checking
+            if (j == 0) { state += 0; }
+                else { state += convertState(field[i-1][j-1]); };
+
+            // The second state value is the value right above the current cell
+            state += convertState(field[i-1][j]);
+
+            // The third state value is the value up and to the right of the cell
+            if (j == field[i].length) { state += 1; }
+                else { state += convertState(field[i-1][j+1]); };
+
+            switch(state) {
+                case "111":
+                    field[i][j] = convertPixel(rules[0]);
+                    break;
+                case "110":
+                    field[i][j] = convertPixel(rules[1]);
+                    break;
+                case "101":
+                    field[i][j] = convertPixel(rules[2]);
+                    break;
+                case "100":
+                    field[i][j] = convertPixel(rules[3]);
+                    break;
+                case "011":
+                    field[i][j] = convertPixel(rules[4]);
+                    break;
+                case "010":
+                    field[i][j] = convertPixel(rules[5]);
+                    break;
+                case "001":
+                    field[i][j] = convertPixel(rules[6]);
+                    break;
+                case "000":
+                    field[i][j] = convertPixel(rules[7]);
+                    break;
+
+                default:
+                    console.debug("Error during wolfram calculation. State did not resolve correctly.")       
+            }
+
+        };
+    };
+    update(field);
 };
 
-
-  //////////
- // Main //
-//////////
-
-// Not sure if this is Javascript general practice but I'm a Python Programmer
-
-    // Setting up our pixel field
-    var field = createArray(fieldHeight,fieldWidth);
-
+function reset() {
     //The first line is special because it will initialize random and be clickable
     for (var i = field[0].length - 1; i >= 0; i--) {
         field[0][i] = randomPixel();
     };
-
 
     for (var i = field.length - 1; i >= 1; i--) {
         for (var j = field[i].length - 1; j >= 0; j--) {
             field[i][j] = "□";
         };
     };
-
-    update(field);
-    updateRules(rules);
-    
+    update();
+    updateRules();
 };
 
+  //////////
+ // Main //
+//////////
+
+// Not sure if this is Javascript general practice but I'm a Python Programmer so... main function
+function main() {
+    // Setting up our pixel field
+    field = createArray(fieldHeight,fieldWidth);
+
+    reset();
+};
+
+main();
+
+// };
 

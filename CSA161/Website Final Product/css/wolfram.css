@@ -8,14 +8,14 @@ body {
 
 .wolfram-grid-container {
     display: grid;
-    grid-template-columns: 20rem 40vw;
+    grid-template-columns: 40rem 40vw;
     grid-template-rows: auto;
 
     margin-left: 20%;
     margin-bottom: 2rem;
     position: absolute;
     height: 80%;
-    width:; 80vw;
+    width: 80vw;
 }
 
 .simulation-area {
