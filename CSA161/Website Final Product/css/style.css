@@ -1,5 +1,5 @@
 body {
-    background-color: #BEBBB6;
+    background-color: #F7F5EF;
 /*    background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2013/12/11/191759/ae5fb76ec7d4e6e611258b64cb4ed5fb-1000.jpg);
         min-height: 100%;
     background-repeat: no-repeat;
@@ -153,4 +153,27 @@ a:link, a:visited, a:active {
     margin: auto;
     width: 70vw;
     font-size: 1.5em;
+}
+
+
+/*Generic Buttons*/
+.btn {
+    background-color: transparent;
+    color: #333333;
+    padding: .5em 1em .5em 1em;
+    border: solid #333333 2px;
+    margin: .1em;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+.btn:active {
+    background: #eee;
+}
+
+.btn:focus {
+    outline: none;
+    text-decoration: none;
 }

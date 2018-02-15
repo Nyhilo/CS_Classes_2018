@@ -16,16 +16,18 @@
     <header><h1 class="wolfram-header">Wolfram</h1></header>
 
     <main class="wolfram-grid-container">
-        <div class="simulation-area" >
-            <span id="sim-first-line">■</span><br>
-            <span id="sim-area">□<br/>□<br/>□</span>
-        </div>
         <div class="options-area">
-            Rules:<br/>
-            <span id="rules-defined"></span><br/>
-            <button type="button" onclick="wolfram()">Calculate Rule 110</button><br/>
-            <button type="button" onclick="reset()">Click to Reset</button><br/>
+            <h3 class="rules-header">Rules:</h3><br/>
+            <button class="btn" type="button" onclick="wolfram()">Calculate Rule 110</button> | 
+            <button class="btn" type="button" onclick="reset()">Click to Reset</button><br/>
         </div> 
+
+        <div class="simulation-area" >
+            <canvas id="sim-first-line" width="360" height="10"
+            style="border:1px solid #000000;"></canvas><br/>
+            <canvas id="sim-area" width="360" height="600"
+            style="border:1px solid #000000;"></canvas>
+        </div>
     </main>
 
     <footer>
@@ -34,6 +36,6 @@
         </a>
     </footer>
 
-    <script src="javascript/wolfram.js"></script>
+    <script src="javascript/wolframv2.js"></script>
 </body>
 </html>
