@@ -122,11 +122,12 @@ function createArray(length) {
 
 field = createArray(height/pixelSize+1, width/pixelSize)
 // Generate a random field for testing
-for (var i = 0; i < height/pixelSize; i++) {
+for (var i = 0; i < height/pixelSize+1; i++) {
     for (var j = 0; j < width/pixelSize; j++) {
         field[i][j] = Math.round(Math.random());
     }
 }
+field[0][0] = [1,1]
 console.log(field)
 drawBoard();
 drawPixels();
