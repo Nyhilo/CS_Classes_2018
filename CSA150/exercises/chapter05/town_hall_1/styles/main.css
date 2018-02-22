@@ -1,24 +1,36 @@
+/*reset selector*/
+* { margin: 0; padding: 0; }
+
 /* the styles for the elements */
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
+    width: 600px;
+    margin: 0 auto;
+    border: 3px solid #931420;
+    background-color: #fffded;
+}
+
+header {
+    border-bottom: 3px solid #931420;
+    padding: 1.5em 0 2em;
+    background: -webkit-linear-gradient(30deg, #f6bb73 0%, /*#f6bb73 30%,*/ #fffded 50%, /*#f6bb73 80%,*/ #f6bb73);
 }
 
 /* the styles for the header */
 header img {
 	float: left;
+    padding: 0 30px;
 }
 
 header h2 {
     font-size: 170%;
     color: #800000;
-    text-indent: 30px;
 }
 
 header h3 {
     font-size: 130%;
     font-style: italic;
-    text-indent: 30px;
 }
 
 .shadow {
@@ -28,20 +40,51 @@ header h3 {
 /* the styles for the section */
 main {
 	clear: left;
+    padding: 0 30px;
 }
 
 main h1 {
     font-size: 150%;
+/*    border-bottom: 3px solid #931420;
+    border-top: 3px solid #931420;*/
+    padding: .3em 1.5em;
+    border: 4.5px double #931420;
+    border-radius: 10px;
+    box-shadow: 4px 4px black;
 }
 
 main h2 {
     font-size: 130%;
     color: #800000;
+    padding: .5em 0 .25em;
 }
 
 main h3 {
     font-size: 105%;
+    padding-bottom: .25em;
 }
+
+main img {
+    padding-bottom: 1em;
+}
+
+main p {
+    padding-bottom: .5em;
+}
+
+main blockquote {
+    padding: 0 2em;
+    font-style: italic;
+}
+
+main ul {
+    padding: 0 0 .25em 1.25em;
+}
+
+main li {
+    padding-bottom: .35em;
+}
+
 
 a:focus,
 a:hover {
@@ -51,4 +94,7 @@ a:hover {
 /* the styles for the footer */
 footer p {
     text-align: center;
+    background-color: #931420;
+    color: white;
+    padding: 1em 0;
 }
