@@ -1,0 +1,141 @@
+/*reset selector*/
+* { margin: 0; padding: 0; }
+
+/* the styles for the elements */
+html {
+    border-color: white;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 800px;
+    margin: 0 auto;
+    border: 3px solid #931420;
+    background-color: #fffded;
+}
+
+header {
+    border-bottom: 3px solid #931420;
+    padding: 1.5em 0 2em;
+    background: -webkit-linear-gradient(30deg, #f6bb73 0%, /*#f6bb73 30%,*/ #fffded 50%, /*#f6bb73 80%,*/ #f6bb73);
+    background: -o-linear-gradient(30deg, #f6bb73 0%, /*#f6bb73 30%,*/ #fffded 50%, /*#f6bb73 80%,*/ #f6bb73);
+    background: linear-gradient(30deg, #f6bb73 0%, /*#f6bb73 30%,*/ #fffded 50%, /*#f6bb73 80%,*/ #f6bb73);
+}
+
+/* the styles for the header */
+header img {
+	float: left;
+    padding: 0 30px;
+}
+
+header h2 {
+    font-size: 170%;
+    color: #800000;
+}
+
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+}
+
+.shadow {
+    text-shadow: 2px 2px #800000;
+}
+
+/* the styles for the section */
+main {
+    clear: left;
+    padding: 0;
+}
+
+section {
+    width: 525px;
+    float: right;
+    padding: 0 20px 20px;
+}
+
+section h1 {
+    font-size: 150%;
+    padding: .5em 0 .25em;
+    margin: 0;
+}
+
+section h2 {
+    font-size: 130%;
+    color: #800000;
+    padding: .5em 0 .25em;
+}
+
+section p {
+    padding-bottom: .5em;
+}
+
+section blockquote {
+    padding: 0 2em;
+    font-style: italic;
+}
+
+section ul {
+    padding: 0 0 .25em 1.25em;
+}
+
+section li {
+    padding-bottom: .35em;
+}
+
+article {
+    padding: .5em 0;
+    border-top: solid 2px #800000;
+    border-bottom: solid 2px #800000;
+}
+
+article img {
+    float: right;
+    margin: 1em;
+    border: solid 1px black;
+}
+
+article h2 {
+    padding-top: 0;
+}
+
+article h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+
+aside h2 {
+    font-size: 130%;
+    color: #800000;
+    padding: .5em 0 .25em;
+}
+
+aside {
+    width: 215px;
+    float: right;
+    padding: 0 0 20px 20px;
+}
+
+aside h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+
+aside img {
+    padding-bottom: 1em;
+}
+
+a:focus,
+a:hover {
+    font-style: italic;
+}
+
+/* the styles for the footer */
+footer p {
+    text-align: center;
+    background-color: #931420;
+    color: white;
+    padding: 1em 0;
+    clear: both;
+}
