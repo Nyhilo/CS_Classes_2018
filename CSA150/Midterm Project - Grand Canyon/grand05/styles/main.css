@@ -1,0 +1,108 @@
+/*reset selector*/
+* { margin: 0; padding: 0; }
+
+/*Whole document*/
+html {
+    background-image: url("../images/gc_background.png");
+    background-repeat: repeat;
+    /*background-color: gray;*/
+}
+
+body {
+    font-family: sans-serif;
+    width: 800px;
+    background: white;
+    margin: 0 auto;
+    border: solid 4px black;
+    box-shadow: 0 8px 24px 8px black;
+}
+
+/*Header*/
+header {
+    border-bottom: solid 2px black;
+    height: auto;
+    overflow: hidden;
+    background: -webkit-linear-gradient(45deg, white 0%, brown 75%, black);
+    background: -o-linear-gradient(45deg, white 0%, brown 75%, black);
+    background: linear-gradient(45deg, white 0%, brown 75%, black);
+}
+
+header h2 {
+    font-size: 250%;
+    margin: 25px 0 0;
+}
+
+header h3 {
+    font-size: 120%;
+}
+
+/*
+header h2, header h3 {
+    text-indent: 20px;
+}*/
+
+header img {
+    float: left;
+    margin: 20px 15px 10px;
+}
+
+
+/*Main*/
+main {
+    padding: 0 30px 40px;
+    margin: 0;
+}
+
+main h1 {
+    font-size: 200%;
+    margin: 20px 0 0 0;
+}
+
+main h1::first-letter {
+    font-size: 200%;
+}
+
+main h2 {
+    font-size: 150%;
+}
+
+main h3 {
+    font-size: 150%;
+}
+
+main p {
+    margin: 10px 0;
+}
+
+main ul {
+    padding-left: 40px;
+    margin: 10px 0;
+}
+
+main li {
+    /*margin: 0 0 .1em;*/
+}
+
+main a {
+    font-weight: bold;
+    color: brown;
+}
+
+main a:hover, main a:focus {
+    color: green;
+}
+
+/*Footer*/
+footer {
+    border-top: solid 2px black;
+    background: -webkit-linear-gradient(45deg, black 0%, brown 25%, white);
+    background: -o-linear-gradient(45deg, black 0%, brown 25%, white);
+    background: linear-gradient(45deg, black 0%, brown 25%, white);
+
+}
+
+footer p {
+    font-size: 90%;
+    text-align: center; 
+    padding: 15px 0;
+}
