@@ -46,9 +46,20 @@ header img {
     margin: 20px 15px 10px;
 }
 
+/*section*/
+main aside {
+    float: left;
+    width: 160px;
+}
+
+main section {
+    width: 580px;
+    float: left;
+}
 
 /*Main*/
 main {
+    clear: both;
     padding: 0 30px 40px;
     margin: 0;
 }
@@ -75,12 +86,11 @@ main p {
 }
 
 main ul {
-    padding-left: 40px;
-    margin: 10px 0;
+    margin: 30px 0;
 }
 
 main li {
-    /*margin: 0 0 .1em;*/
+    margin: 0 0 .1em;
 }
 
 main a {
@@ -98,6 +108,7 @@ footer {
     background: -webkit-linear-gradient(45deg, black 0%, brown 25%, white);
     background: -o-linear-gradient(45deg, black 0%, brown 25%, white);
     background: linear-gradient(45deg, black 0%, brown 25%, white);
+    clear: both;
 
 }
 
