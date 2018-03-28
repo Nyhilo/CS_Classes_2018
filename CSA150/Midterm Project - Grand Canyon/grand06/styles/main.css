@@ -78,7 +78,8 @@ main h2 {
 }
 
 main h3 {
-    font-size: 150%;
+    margin: 15px 0 0;
+    font-size: 120%;
 }
 
 main p {
@@ -100,6 +101,10 @@ main a {
 
 main a:hover, main a:focus {
     color: green;
+}
+
+main img {
+    padding: 5px 0;
 }
 
 /*Footer*/
