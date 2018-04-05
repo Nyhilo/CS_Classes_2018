@@ -8,6 +8,7 @@ h3 {
 
 main.simulation-area, main.options-area {
     padding: 1em;
+    outline: none;
 }
 
 main div {
