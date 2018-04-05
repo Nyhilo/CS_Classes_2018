@@ -37,7 +37,7 @@ const gridThickness   = 2;
 
 // There are 8 rules for the simulation. We'll define rule 30 as an initial state just for fun
 // The array elements correspond to the rules [111,110,101,100,011,010,001,000]
-let rules = [0,0,0,1,1,1,1,0];
+let rules = [0,1,1,0,1,1,1,0];
 
 
 
@@ -146,13 +146,7 @@ function createArray(dimensions) {
     return arr;
 }
 
-
-  //////////////////////////
- // Interation Functions //
-//////////////////////////
-
-
-
+// With this we can click on the cells in the input row to change the pattern
 simInput.addEventListener('click', (e) => {
     // We need to get the position of the canvas in order to click it properly
     let simInputEdge = simInput.getBoundingClientRect();
@@ -170,7 +164,68 @@ simInput.addEventListener('click', (e) => {
 
 });
 
+// Runs the wolfram simulation depending on the rules currently defined.
+function runSim() {
+    // Iterate through all cells in the field
+    for (let i = 0; i < field.length; i++) {
+        // Row 0 of field needs to reference the input field
+        let previousRow = (i == 0 ? inField : field[i-1])
+        console.log('-')
+        console.log(previousRow)
+        // field[0].lenth is the width of the 2d array
+        for (let j = 0; j < field[0].length; j++) {
+            // State will be something like "110" and will be the thing we check against the rules
+            let state = ""
+            console.log(field[i]);
+            // The first state value is the value up and to the left of the cell we're checking
+            state += ( j == 0 ? 0 : previousRow[j-1] );
 
+            // The second state value is the value right above the current cell
+            state += previousRow[j];
+
+            // The third state value is the value up and to the right of the cell
+            state += ( j == field[0].length ? 0 : previousRow[j+1] );
+
+            switch(state) {
+                case "111":
+                    field[i][j] = rules[0];
+                    break;
+                case "110":
+                    field[i][j] = rules[1];
+                    break;
+                case "101":
+                    field[i][j] = rules[2];
+                    break;
+                case "100":
+                    field[i][j] = rules[3];
+                    break;
+                case "011":
+                    field[i][j] = rules[4];
+                    break;
+                case "010":
+                    field[i][j] = rules[5];
+                    break;
+                case "001":
+                    field[i][j] = rules[6];
+                    break;
+                case "000":
+                    field[i][j] = rules[7];
+                    break;
+
+                default:
+                    console.debug("Error during wolfram calculation. State did not resolve correctly.")       
+            }
+
+        }
+
+    }
+}
+
+function reset() {
+    runSim();
+    drawBoard();
+    drawInput();
+}
 
   //////////
  // Main //
@@ -184,19 +239,6 @@ for (var i = 0; i < inField.length; i++) {
     inField[i] = Math.round(Math.random())
 }
 
-
-// Generate a random field for testing
-for (let i = 0; i < field.length; i++) {
-    // field[0].length effectively gets the "width" of our 2d array
-    for (let j = 0; j < field[0].length; j++) {
-        field[i][j] = Math.round(Math.random());
-    }
-}
-field[0] = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
-field[1] = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
-field[field.length-1] = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-
-drawBoard();
-drawInput();
+reset();
 
 // }    // Closing the DOM loader at the top
