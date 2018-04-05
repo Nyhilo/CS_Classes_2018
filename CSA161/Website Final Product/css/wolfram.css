@@ -8,7 +8,6 @@ h3 {
 
 main.simulation-area, main.options-area {
     padding: 1em;
-    outline: none;
 }
 
 main div {
@@ -16,6 +15,11 @@ main div {
     width: auto;
     text-align: center;
     margin: 0 auto;
+}
+
+canvas{
+    margin: .5rem 0;
+    border: 1px solid black;
 }
 
 .btn {
