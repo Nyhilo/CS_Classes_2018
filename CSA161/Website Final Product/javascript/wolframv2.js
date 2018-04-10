@@ -29,15 +29,15 @@ let inHeight    = simInput.height;
 let cellSize   = 15;
 
 // Grid styling
-// const gridColor       = "#dddddd";
+const gridColor       = "#dddddd";
 // const gridColor       = "white"
-const gridColor       = "#F7F5EF"
+// const gridColor       = "#F7F5EF"
 const cellColor      = "#000000"
 const gridThickness   = 2;
 
 // There are 8 rules for the simulation. We'll define rule 30 as an initial state just for fun
 // The array elements correspond to the rules [111,110,101,100,011,010,001,000]
-let rules = [0,1,1,0,1,1,1,0];
+let rules = [0,0,0,1,1,1,1,0];
 
 
 
@@ -184,7 +184,7 @@ function runSim() {
             state += previousRow[j];
 
             // The third state value is the value up and to the right of the cell
-            state += ( j == field[0].length ? 0 : previousRow[j+1] );
+            state += ( j == field[0].length-1 ? 0 : previousRow[j+1] );
 
             switch(state) {
                 case "111":
@@ -231,8 +231,14 @@ function reset() {
  // Main //
 //////////
 
-// Create a 2d array that fits in the canvas
+// Create a 2d array that fits in the canvas and initialize every value to 0
 field = createArray([height/cellSize, width/cellSize]);
+for (let i = 0; i < field.length; i++) {
+    for (let j = 0; j < field[0].length; j++) {
+        field[i][j] = 0;
+    }
+}
+
 // Create a 1d array for the input feild. It will be initialized randomly
 inField = createArray([width/cellSize]);
 for (var i = 0; i < inField.length; i++) {
