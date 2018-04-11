@@ -47,12 +47,11 @@ header img {
 }
 /* the styles for the form */
 fieldset {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding-top: .5em;
+    margin-bottom: .5em;
+    padding: .5em 1em;
 }
 legend {
-    color: #931420;
+    color: black;
     font-weight: bold;
     font-size: 85%;
     margin-bottom: .5em;
@@ -71,13 +70,27 @@ input, select {
     margin-bottom: .5em;
 }
 input:required, input[required] {
-	border: 3px solid red;
+    border: 2px solid #800000;
 }
 input:valid {
 	border: 1px solid black;
 }
 input:invalid {
+    border: 2px solid #800000;
 	box-shadow: none;
+}
+#radio_field label {
+    float: none;
+}
+#radio_field input[type=radio] {
+    width: auto;
+    margin-left: 3em;
+}
+#expiration_month {
+    width: 7em;
+}
+#expiration_year {
+    width: 5em;
 }
 br {
     clear: both;
