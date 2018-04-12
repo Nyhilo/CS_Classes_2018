@@ -4,6 +4,7 @@ body {
 
 h3 {
         font-size: 200%;
+        margin-bottom: 0;
 }
 
 main.simulation-area, main.options-area {
@@ -19,9 +20,29 @@ main div {
 
 canvas{
     margin-bottom: .5rem;
-    border: 1px solid #333;
+    border: 1px solid #333332;
+}
+
+.rule-container {
+    display: inline-block;
+    font-size: 4px;
+}
+
+div.inline {
+    display: inline-block;
+    letter-spacing: 0;
+}
+
+div.rule {
+    margin-top: 1px;
+}
+
+.rule-container div {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #333332;
 }
 
 .btn {
-    
+    margin-bottom: 1rem;
 }

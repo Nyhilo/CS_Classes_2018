@@ -29,7 +29,7 @@ let inHeight    = simInput.height;
 let cellSize   = 15;
 
 // Grid styling
-const gridColor       = "#dddddd";
+const gridColor       = "#DEDCD8";
 // const gridColor       = "white"
 // const gridColor       = "#F7F5EF"
 const cellColor      = "#000000"
@@ -231,20 +231,26 @@ function reset() {
  // Main //
 //////////
 
-// Create a 2d array that fits in the canvas and initialize every value to 0
-field = createArray([height/cellSize, width/cellSize]);
-for (let i = 0; i < field.length; i++) {
-    for (let j = 0; j < field[0].length; j++) {
-        field[i][j] = 0;
+
+function main() {
+    // Create a 2d array that fits in the canvas and initialize every value to 0
+    field = createArray([height/cellSize, width/cellSize]);
+    for (let i = 0; i < field.length; i++) {
+        for (let j = 0; j < field[0].length; j++) {
+            field[i][j] = 0;
+        }
     }
+
+    // Create a 1d array for the input feild. It will be initialized randomly
+    inField = createArray([width/cellSize]);
+    for (var i = 0; i < inField.length; i++) {
+        inField[i] = Math.round(Math.random())
+    }
+
+    runSim();
+    clearBoard();
+    drawInput();
 }
 
-// Create a 1d array for the input feild. It will be initialized randomly
-inField = createArray([width/cellSize]);
-for (var i = 0; i < inField.length; i++) {
-    inField[i] = Math.round(Math.random())
-}
-
-reset();
-
+main();
 // }    // Closing the DOM loader at the top

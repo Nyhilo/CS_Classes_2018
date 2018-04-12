@@ -18,11 +18,59 @@
     <main class="wolfram-grid-container">
         <div class="options-area">
             <h3 class="rules-header">Rules:</h3><br/>
-            <button class="btn" type="button" onclick="wolfram()">Calculate Rule 110</button> | 
-            <button class="btn" type="button" onclick="reset()">Click to Run</button><br/>
+            <div class="rule-container">
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline" style="background-color: #333332"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline"></div>
+                <div class="inline" style="background-color: #333332"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline"></div>
+                <div class="inline"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline"></div>
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline" style="background-color: #333332"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline"></div>
+                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline"></div>
+                <div class="inline"></div>
+                <div class="inline" style="background-color: #333332"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
+            <div class="rule-container">
+                <div class="inline"></div>
+                <div class="inline"></div>
+                <div class="inline"></div><br>
+                <div class="rule"></div>
+            </div>&nbsp;|
         </div> 
-
+        <br>
         <div class="simulation-area" >
+            <button class="btn" type="button" onclick="clearBoard()">Clear Board</button> | 
+            <button class="btn" type="button" onclick="reset()">Click to Run</button><br/>
             <canvas id="sim-first-line" width="390" height="15"></canvas><br/>
             <canvas id="sim-area" width="390" height="600"></canvas>
         </div>
@@ -34,6 +82,6 @@
         </a>
     </footer>
 
-    <script src="javascript/wolframv2.js"></script>
+    <script src="javascript/wolfram.js"></script>
 </body>
 </html>
