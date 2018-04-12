@@ -39,7 +39,40 @@ const gridThickness   = 2;
 // The array elements correspond to the rules [111,110,101,100,011,010,001,000]
 let rules = [0,0,0,1,1,1,1,0];
 
+let ruleIDs = [document.getElementById("rule1"),
+               document.getElementById("rule2"),
+               document.getElementById("rule3"),
+               document.getElementById("rule4"),
+               document.getElementById("rule5"),
+               document.getElementById("rule6"),
+               document.getElementById("rule7"),
+               document.getElementById("rule8")];
 
+  ////////////////////
+ // Rule Functions //
+////////////////////
+
+function drawRules() {
+    for (var i = 0; i < rules.length; i++) {
+        if ( rules[i] ) {
+            ruleIDs[i].style.backgroundColor = "#333332";
+        } else {
+            ruleIDs[i].style.backgroundColor = "";
+        }
+    }
+    document.getElementById("ruleNumber").innerHTML = parseInt(rules.join(''), 2);
+}
+
+function updateRule(i) {
+    if (ruleIDs[i].style.backgroundColor == "") {
+        rules[i] = 1;
+    } else {
+        rules[i] = 0;
+    }
+
+
+    drawRules();
+}
 
 
   ////////////////////
@@ -170,13 +203,10 @@ function runSim() {
     for (let i = 0; i < field.length; i++) {
         // Row 0 of field needs to reference the input field
         let previousRow = (i == 0 ? inField : field[i-1])
-        console.log('-')
-        console.log(previousRow)
         // field[0].lenth is the width of the 2d array
         for (let j = 0; j < field[0].length; j++) {
             // State will be something like "110" and will be the thing we check against the rules
             let state = ""
-            console.log(field[i]);
             // The first state value is the value up and to the left of the cell we're checking
             state += ( j == 0 ? 0 : previousRow[j-1] );
 
@@ -225,6 +255,7 @@ function reset() {
     runSim();
     drawBoard();
     drawInput();
+    drawRules();
 }
 
   //////////
@@ -250,6 +281,7 @@ function main() {
     runSim();
     clearBoard();
     drawInput();
+    drawRules();
 }
 
 main();

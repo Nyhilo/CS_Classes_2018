@@ -15,63 +15,70 @@
 <body>
     <header><h1 class="wolfram-header">Wolfram</h1></header>
 
+    <aside class="right">
+        <h4>Wolfram Code and the Rules of Cellular Automation</h4>
+        <p>To use this app...</p>
+    </aside>
+
     <main class="wolfram-grid-container">
         <div class="options-area">
-            <h3 class="rules-header">Rules:</h3><br/>
+            <h3 class="rules-header">Rules: (<span id="ruleNumber"></span>)</h3><br/>
             <div class="rule-container">
-                <div class="inline" style="background-color: #333332"></div>
+                <div class="inline" style="background-color: none"></div>
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline" style="background-color: #333332"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(0)"><div class="rule" id="rule1"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(1)"><div class="rule" id="rule2"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline"></div>
                 <div class="inline" style="background-color: #333332"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(2)"><div class="rule" id="rule3"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline"></div>
                 <div class="inline"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(3)"><div class="rule" id="rule4"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline"></div>
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline" style="background-color: #333332"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(4)"><div class="rule" id="rule5"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline"></div>
                 <div class="inline" style="background-color: #333332"></div>
                 <div class="inline"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(5)"><div class="rule" id="rule6"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline"></div>
                 <div class="inline"></div>
                 <div class="inline" style="background-color: #333332"></div><br>
-                <div class="rule"></div>
+                <button class="btn rulebtn" onclick="updateRule(6)"><div class="rule" id="rule7"></div></button>
             </div>&nbsp;|
             <div class="rule-container">
                 <div class="inline"></div>
                 <div class="inline"></div>
                 <div class="inline"></div><br>
-                <div class="rule"></div>
-            </div>&nbsp;|
+                <button class="btn rulebtn" onclick="updateRule(7)"><div class="rule" id="rule8"></div></button>
+            </div>
         </div> 
         <br>
         <div class="simulation-area" >
             <button class="btn" type="button" onclick="clearBoard()">Clear Board</button> | 
             <button class="btn" type="button" onclick="reset()">Click to Run</button><br/>
+            <p>Input Row</p>
             <canvas id="sim-first-line" width="390" height="15"></canvas><br/>
+            <p>Simulation Area</p>
             <canvas id="sim-area" width="390" height="600"></canvas>
         </div>
     </main>
