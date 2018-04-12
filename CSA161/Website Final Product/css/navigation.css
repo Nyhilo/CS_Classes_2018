@@ -1,0 +1,55 @@
+/* Sidebar stuff */
+
+aside {
+    border-right: 1px solid #333332;
+    background-color: inherit;
+    padding: 0 5px;
+
+    height: 100%;
+    position: fixed;
+    float: left;
+    
+    transition: .5s;
+}
+
+.tabbtn {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 0px;
+    border-left: 1px solid #333332;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    transition: .5s;    
+}
+
+aside#info {
+    width: 325px;
+    left: -335px;
+}
+
+
+aside#nav {
+    width: 275px;
+    left: -285px;
+}
+
+#infobtn {
+    top: 5px;
+}
+
+#hamburgbtn {
+    top: 50px;
+}
+
+.sidebarbtn {
+    margin: 20px;
+    padding: 0;
+}
+
+.sidebarbtn h3 {
+    margin: .2rem;
+    padding: 0;
+    text-align: center;
+    width: inherit;
+}

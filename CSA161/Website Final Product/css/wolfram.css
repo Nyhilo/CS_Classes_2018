@@ -1,37 +1,49 @@
 body {
-    margin-top: .5rem;
+    margin: 0;
 }
 
-aside.right {
-    width: 20rem;
-    height: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    border-left: 1px solid #333332;
-    padding: 0 1rem;
+
+/* Main */
+
+h1 {
+    margin: 1rem;
 }
 
-h3 {
-        font-size: 200%;
-        margin-bottom: 0;
+h2 {
+    font-size: 200%;
+    margin: 0;
+    text-align: left;
 }
 
-h4 {
+#info h2 {
     font-size: 180%;
     text-align: center;
 }
 
-main.simulation-area, main.options-area {
-    padding: 1em;
+main {
+    margin-left: 0px;
+    transition: .5s;
+}
+
+main div.options-area {
+    display: table;
+    width: auto;
 }
 
 main div {
+    position: relative;
     display: box;
     width: auto;
     text-align: center;
     margin: 0 auto;
 }
+
+.btn {
+    margin-bottom: 1rem;
+    border-radius: 2px;
+}
+
+/* Canvas and Rules*/
 
 canvas{
     margin-bottom: .5rem;
@@ -60,11 +72,6 @@ div.rule {
 
 .simulation-area p {
     margin: 0 0 .5rem;
-}
-
-.btn {
-    margin-bottom: 1rem;
-    border-radius: 2px;
 }
 
 .rulebtn {

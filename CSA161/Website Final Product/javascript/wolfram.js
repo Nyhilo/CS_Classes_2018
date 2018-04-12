@@ -258,6 +258,13 @@ function reset() {
     drawRules();
 }
 
+function randomizeInput() {
+    for (var i = 0; i < inField.length; i++) {
+        inField[i] = Math.round(Math.random())
+    } 
+    drawInput();
+}
+
   //////////
  // Main //
 //////////
@@ -266,6 +273,7 @@ function reset() {
 function main() {
     // Create a 2d array that fits in the canvas and initialize every value to 0
     field = createArray([height/cellSize, width/cellSize]);
+
     for (let i = 0; i < field.length; i++) {
         for (let j = 0; j < field[0].length; j++) {
             field[i][j] = 0;
@@ -274,9 +282,7 @@ function main() {
 
     // Create a 1d array for the input feild. It will be initialized randomly
     inField = createArray([width/cellSize]);
-    for (var i = 0; i < inField.length; i++) {
-        inField[i] = Math.round(Math.random())
-    }
+    randomizeInput();
 
     runSim();
     clearBoard();
@@ -285,4 +291,60 @@ function main() {
 }
 
 main();
+
+
+  ///////////////////////
+ // Side Menu Buttons //
+///////////////////////
+
+function openInfo() {
+    let infopanel = document.getElementById("info");
+    let navpanel = document.getElementById("nav");
+    let infobutton = document.getElementById("infobtn");
+    let hamburgbutton = document.getElementById("hamburgbtn");
+    let maindiv = document.getElementById("main");
+    let infoWidth = infopanel.getBoundingClientRect().width 
+
+    if (infopanel.style.left == "0px") {
+        infopanel.style.left = "-335px";
+        infobutton.style.left = "0px";
+        hamburgbutton.style.left = "0px"
+        maindiv.style.marginLeft = "0px"
+        console.log("Closed Info Panel");
+    } else {
+        navpanel.style.left = "-335px";
+        infopanel.style.left = "0px";
+        infobutton.style.left = "335px";
+        hamburgbutton.style.left = "335px"
+        maindiv.style.marginLeft = "335px"
+        console.log("Opened Info Panel");
+    }
+    
+}
+
+function openHamburg() {
+    let infopanel = document.getElementById("info");
+    let navpanel = document.getElementById("nav");
+    let infobutton = document.getElementById("infobtn");
+    let hamburgbutton = document.getElementById("hamburgbtn");
+    let maindiv = document.getElementById("main");
+
+    if (navpanel.style.left == "0px") {
+        navpanel.style.left = "-285px";
+        infobutton.style.left = "0px";
+        hamburgbutton.style.left = "0px";
+        maindiv.style.marginLeft = "0px"
+        console.log("Closed Nav Panel");
+    } else {
+        navpanel.style.left = "0px";
+        infopanel.style.left = "-335px";
+        infobutton.style.left = "285px";
+        hamburgbutton.style.left = "285px";
+        maindiv.style.marginLeft = "285px"
+        console.log("Opened Nav Panel");
+    }
+    
+}
+
+
 // }    // Closing the DOM loader at the top
