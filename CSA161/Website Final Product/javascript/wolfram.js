@@ -26,13 +26,13 @@ let width       = simField.width;
 let height      = simField.height;
 let inWidth     = simInput.width;
 let inHeight    = simInput.height;
-let cellSize   = 15;
+let cellSize   = 10;
 
 // Grid styling
 const gridColor       = "#DEDCD8";
 // const gridColor       = "white"
 // const gridColor       = "#F7F5EF"
-const cellColor      = "#000000"
+const cellColor      = "#333332"
 const gridThickness   = 2;
 
 // There are 8 rules for the simulation. We'll define rule 30 as an initial state just for fun
@@ -73,6 +73,25 @@ function updateRule(i) {
 
     drawRules();
 }
+
+function rule30() {
+    rules = [0,0,0,1,1,1,1,0];
+    clearBoard();
+    drawRules();
+}
+
+function rule105() {
+    rules = [0,1,1,0,1,0,0,1];
+    clearBoard();
+    drawRules();
+}
+
+function rule110() {
+    rules = [0,0,1,1,1,0,0,1];
+    clearBoard();
+    drawRules();
+}
+
 
 
   ////////////////////
@@ -126,7 +145,11 @@ function clearInput() {
     inContext.stroke();
 }
 
-function drawCell(ctx, i, j) { ctx.fillRect( j*cellSize+1, (i)*cellSize+1, cellSize-2, cellSize-2 ); }
+function drawCell(ctx, i, j) {
+    ctx.fillRect(
+        j*cellSize+1, (i)*cellSize+1, cellSize-2, cellSize-2
+        );
+}
 
 function drawBoard() {
     // Clear board
@@ -291,60 +314,6 @@ function main() {
 }
 
 main();
-
-
-  ///////////////////////
- // Side Menu Buttons //
-///////////////////////
-
-function openInfo() {
-    let infopanel = document.getElementById("info");
-    let navpanel = document.getElementById("nav");
-    let infobutton = document.getElementById("infobtn");
-    let hamburgbutton = document.getElementById("hamburgbtn");
-    let maindiv = document.getElementById("main");
-    let infoWidth = infopanel.getBoundingClientRect().width 
-
-    if (infopanel.style.left == "0px") {
-        infopanel.style.left = "-335px";
-        infobutton.style.left = "0px";
-        hamburgbutton.style.left = "0px"
-        maindiv.style.marginLeft = "0px"
-        console.log("Closed Info Panel");
-    } else {
-        navpanel.style.left = "-335px";
-        infopanel.style.left = "0px";
-        infobutton.style.left = "335px";
-        hamburgbutton.style.left = "335px"
-        maindiv.style.marginLeft = "335px"
-        console.log("Opened Info Panel");
-    }
-    
-}
-
-function openHamburg() {
-    let infopanel = document.getElementById("info");
-    let navpanel = document.getElementById("nav");
-    let infobutton = document.getElementById("infobtn");
-    let hamburgbutton = document.getElementById("hamburgbtn");
-    let maindiv = document.getElementById("main");
-
-    if (navpanel.style.left == "0px") {
-        navpanel.style.left = "-285px";
-        infobutton.style.left = "0px";
-        hamburgbutton.style.left = "0px";
-        maindiv.style.marginLeft = "0px"
-        console.log("Closed Nav Panel");
-    } else {
-        navpanel.style.left = "0px";
-        infopanel.style.left = "-335px";
-        infobutton.style.left = "285px";
-        hamburgbutton.style.left = "285px";
-        maindiv.style.marginLeft = "285px"
-        console.log("Opened Nav Panel");
-    }
-    
-}
 
 
 // }    // Closing the DOM loader at the top

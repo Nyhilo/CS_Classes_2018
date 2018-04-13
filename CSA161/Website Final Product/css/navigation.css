@@ -3,35 +3,55 @@
 aside {
     border-right: 1px solid #333332;
     background-color: inherit;
-    padding: 0 5px;
+    padding: 0 10px;
 
     height: 100%;
     position: fixed;
     float: left;
     
     transition: .5s;
+
+    overflow: scroll;
 }
 
-.tabbtn {
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: inherit; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #DEDCD8; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6B6A68; 
+}
+
+button.tabbtn {
     padding: 0;
     margin: 0;
     position: fixed;
     left: 0px;
     border-left: 1px solid #333332;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+    border-radius: 0px 4px 4px 0px;
     transition: .5s;    
 }
 
 aside#info {
     width: 325px;
-    left: -335px;
+    left: -346px;
 }
 
 
 aside#nav {
     width: 275px;
-    left: -285px;
+    left: -296px;
 }
 
 #infobtn {
