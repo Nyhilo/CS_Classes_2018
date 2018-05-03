@@ -5,7 +5,19 @@
     <title>An Introduction to Lorem Ipsum</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/print.css" media="print"/>
     <link rel="shortcut icon" href="images/favicon.ico"/>
+    <script>
+        var $ = function(id) {
+            return document.getElementById(id);
+        }
+        var printPage = function() {
+            window.print(); 
+        }
+        window.onload = function() {
+            $("printButton").onclick = printPage;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -41,14 +53,14 @@
             <h2>Links</h2>
             <ul>
                 <li><a href="example.html"><h3>See an Example of Lorem Ipsum in Popular Culture</h3></a></li>
-                <li><a href="analysis.html"><h3>Click Here For an Analysis of a Section of Lorem Ipsum Text</</h3></a></li>
+                <li><a href="analysis.html"><h3>Click Here For an Analysis of a Section of Lorem Ipsum Text</h3></a></li>
                 <li><a href="contact.html"><h3>Want To Send Me a Message?</h3></a></li>
             </ul>
         </aside>
+        <input type="button" id="printButton" value="Print This Page">
     </main>
     <footer>
-        <p>&copy;<script type="text/javascript"> document.write(new Date().getFullYear());</script>
-            , Jacob Cloward | <a href="mailto:jcloward@yc.edu?Subject=Lorem Ipsum" target="_top">Email</a> | 
+        <p>&copy;<script type="text/javascript"> document.write(new Date().getFullYear());</script>, Jacob Cloward | <a href="mailto:jcloward@yc.edu?Subject=Lorem%20Ipsum" target="_top">Email</a> | 
             <a href="https://nyhilo.github.io/woti" target="_blank">A Woti Project</a></p>
     </footer>
     
